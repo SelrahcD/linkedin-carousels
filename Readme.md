@@ -2,8 +2,14 @@
 
 ## Run
 
-```bash
+```shell
 npx marp --theme-set ./themes/ --pdf -- aaa.md
+```
+
+## Generate a PDF
+
+```shell
+npx marp --theme-set ./themes/ --pdf --allow-local-files -- aaa.md
 ```
 
 ## Themes

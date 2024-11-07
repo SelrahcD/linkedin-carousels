@@ -59,6 +59,8 @@ h6 {
   font-size: 0.9em;
 }
 
+
+
 section {
   font-family: Lato, 'Avenir Next', Avenir, 'Trebuchet MS', 'Segoe UI',
   sans-serif;
@@ -91,6 +93,10 @@ section * {
   z-index: 2;
 }
 
+a {
+  color: var(--title-color);
+}
+
 header {
   font-family: 'Karla', sans-serif;
   font-size: 0.4em;
@@ -115,6 +121,24 @@ footer a {
   vertical-align:middle;
   margin-right: 10px;
 }
+
+.offer {
+  display: flex;
+}
+
+.offer-content {
+  float: left;
+}
+
+.offer-img {
+  float: right;
+  width: 770px;
+  transform: rotate(10deg);
+  outline: 1px solid transparent;
+  -webkit-backface-visibility: hidden;
+}
+
+
 
 pre {
   border: none;
