@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "marp": "npx marp --watch  aaa.md"
+    "marp": "npx marp  --debug --watch --theme-set ./themes/ -- aaa.md"
   },
   "private": true,
   "devDependencies": {
