@@ -33,8 +33,8 @@ h6 {
 h1 {
   color: var(--h1-color);
   font-size: 3em;
-  width: 75%;
-  text-wrap: pretty;
+  width: 85%;
+  text-wrap: auto;
   line-height: 1;
 }
 
@@ -138,14 +138,32 @@ footer a {
   -webkit-backface-visibility: hidden;
 }
 
-
-
 pre {
   border: none;
   border-radius: 0;
   border-left: 5px solid var(--title-color);
   color: #c9d1d9;
   background: var(--secondary-color);
+}
+
+table.simple > tbody, tr, th, td{
+  background-color: rgba(0, 0, 0, 0.0) !important;
+  border: none !important;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.big {
+  font-size: 2em;
+}
+
+.accent-color {
+  color: var(--accent-color);
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
 }
 
 pre code.hljs {
