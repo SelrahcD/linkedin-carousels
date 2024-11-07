@@ -1,0 +1,16 @@
+{
+  "name": "carousels",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "marp": "npx marp --watch  aaa.md"
+  },
+  "private": true,
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.0.3"
+  },
+  "dependencies": {
+    "@marp-team/marp-core": "^4.0.0"
+  }
+}
