@@ -67,9 +67,28 @@ section {
   color: var(--text-color);
 }
 
+section::before {
+  content: "";
+  position: absolute;
+  top: 25%;
+  left: 0%;
+  width: 100%;
+  height: 100%; /* Covers top half */
+  background-color: #FF5733; /* First color */
+  z-index: 1;
+  transform: rotate(40deg); /* Adjust angle for desired rotation */
+  transform-origin: top left;
+  opacity: 0.2;
+}
+
 section::after {
   color: var(--secondary-color);
   content:  attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+}
+
+section * {
+  position: relative;
+  z-index: 2;
 }
 
 header {
