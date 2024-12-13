@@ -103,6 +103,10 @@ header {
   color: var(--secondary-color);
 }
 
+p, ul {
+  margin-bottom: 0.8rem;
+}
+
 footer {
   color: var(--secondary-color);
 }
@@ -154,7 +158,17 @@ table.simple > tbody, tr, th, td{
 
 .container {
   display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.middle {
+  align-items: center;
   justify-content: center;
+}
+
+.right {
+    text-align: right;
 }
 
 .big {
