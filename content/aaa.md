@@ -11,16 +11,16 @@ _footer: <a href="https://www.linkedin.com/in/charles-desneuf/"><img src="./char
 footer: <a href="https://www.linkedin.com/in/charles-desneuf/">Charles Desneuf</a>
 -->
 
-# Le builder pattern dans les tests
+# Arrange<br />Act<br />Assert
 
 Une structure de test reconnaissable au premier coup d’œil
 
 ---
 
 
-## Arrange-Act-Assert ?
+## AAA, WTF ?
 
-AAA rend les tests plus faciles à comprendre et à maintenir en divisant chaque test en trois phases distinctes. Cette séparation permet de voir rapidement ce qui est mis en place, exécuté et vérifié.
+AAA est une manière de structure les tests en trois phases distinctes. Cette séparation permet de voir rapidement ce qui est mis en place, exécuté et vérifié, et donc de mieux comprendre ce à quoi s'intéresse un test.
 
 - **Arrange** - Préparer le contexte du test.
 - **Act** - Exécuter l’action que vous testez.
@@ -30,7 +30,7 @@ AAA rend les tests plus faciles à comprendre et à maintenir en divisant chaque
 
 ## Arrange
 
-Dans cette phase, vous définissez les conditions initiales. Pensez-y comme le « début » de l’histoire.
+Dans cette phase, vous définissez les conditions initiales. Pensez-y comme le « début de l’histoire », la mise en place du « petit monde » dans lequel le test va s'exécuter.
 
 ```php
 $burrito = new Burrito(['thon', 'salade', 'oignon', 'avocat']);
@@ -40,7 +40,9 @@ $burrito = new Burrito(['thon', 'salade', 'oignon', 'avocat']);
 
 ## Act
 
-Ensuite, déclenchez le comportement que vous souhaitez tester.
+Ensuite, déclenchez le comportement auquel vous vous intéressez.
+
+C'est le moment de donner une pichenette dans la bille qui va lancer l'histoire.
 
 ```php
 $burrito->rendreVégétarien();
@@ -51,6 +53,7 @@ $burrito->rendreVégétarien();
 ## Assert
 
 Vérifiez que le résultat correspond à vos attentes.
+Est-ce que tout s'est bien passé comme prévu ?
 
 ```php
 $this->assertTrue($burrito->estVégétarien());
@@ -62,20 +65,27 @@ $this->assertEquals(
 
 ---
 
-## Variation : Fusionner Act & Assert
+## Les 3 As
 
-Quand l’action est simple, vous pouvez combiner Act et Assert en une seule ligne pour un test plus concis.
+On a ainsi une structure que l'on retrouve dans chaque test et qui est interprétable facilement.
 
 ```php
-$burrito = new Burrito(['thon']);
-$this->assertFalse($burrito->estVégétarien());
+$burrito = new Burrito(['thon', 'salade', 'oignon', 'avocat']);
+
+$burrito->rendreVégétarien();
+
+$this->assertTrue($burrito->estVégétarien());
+$this->assertEquals(
+    ['oeuf', 'salade', 'oignon', 'avocat'],
+    $burrito->ingrédients()
+);
 ```
 
 ---
 
-## Utilisez des commentaires pour séparer les phases
+## Tips: Utilisez des commentaires pour séparer les phases
 
-Commenter chaque phase aide à bâtir cette habitude et clarifie votre intention pour les futurs lecteurs.
+Commenter chaque phase aide à bâtir cette habitude.
 
 ```php
 // Arrange
@@ -91,6 +101,40 @@ $this->assertEquals(
     $burrito->ingrédients()
 );
 ```
+
+C'est utile au début, mais je vous conseille de vous en passer quand vous êtes prêts.
+
+---
+
+## Variation : Fusionner Act & Assert
+
+Quand l’action est simple, vous pouvez combiner Act et Assert en une seule ligne pour un test plus concis.
+
+```php
+$burrito = new Burrito(['thon', 'salade', 'oignon', 'avocat', 'riz']);
+
+$this->assertFalse($burrito->estVégétarien());
+```
+
+---
+
+## GWT ??
+ 
+Vous avez peut-être déjà entendu parler de Given / When / Then, du côté du BDD. On peut faire un parallèle très fort avec AAA.
+
+<div class="container big accent-color">
+    <table class="simple">
+    <tr>
+        <td>Given</td><td>Arrange</td>
+    </tr>
+    <tr>
+        <td>When</td><td>Act</td>
+    </tr>
+    <tr>
+        <td>Then</td><td>Assert</td>
+    </tr>
+    </table>
+</div>
 
 ---
 

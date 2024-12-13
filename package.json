@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "marp": "npx marp --watch --theme-set ./themes/ --"
+    "marp": "npx marp --watch --theme-set ./themes/ -- ./content"
   },
   "private": true,
   "devDependencies": {
