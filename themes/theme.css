@@ -175,6 +175,10 @@ table.simple > tbody, tr, th, td{
   font-size: 2em;
 }
 
+.small {
+  font-size: 0.6em;
+}
+
 .accent-color {
   color: var(--accent-color);
   font-family: 'Karla', sans-serif;
