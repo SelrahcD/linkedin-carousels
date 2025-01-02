@@ -3,9 +3,9 @@ CONTENT_DIR = ./content
 BUILD_DIR = ./build
 THEMES_DIR = ./themes
 MD_FILES := $(shell find ./content -name '*.md')
-CARROUSELS_PDF := $(patsubst $(CONTENT_DIR)/%.md,%.pdf,$(MD_FILES))
+CARROUSELS := $(patsubst $(CONTENT_DIR)/%.md,$(BUILD_DIR)/%,$(MD_FILES))
 
-all: $(CARROUSELS_PDF)
+all: $(CARROUSELS)
 
 one:
 	@selected_file=$$(find $(CONTENT_DIR) -type f -name "*.md" | fzf); \
@@ -15,12 +15,12 @@ one:
 	fi; \
 	filename=$$(basename -- "$$selected_file"); \
 	filename_without_ext=$${filename%.*}; \
-	make $${filename_without_ext}.pdf
+	make $(BUILD_DIR)/$${filename_without_ext}
 
 
-%.pdf: $(CONTENT_DIR)/%.md
-	@mkdir -p $(BUILD_DIR)
-	npx marp --theme-set $(THEMES_DIR)/ --pdf --allow-local-files --output $(BUILD_DIR)/$@ -- $<
+$(BUILD_DIR)/%: $(CONTENT_DIR)/%.md
+	@mkdir -p $@
+	npx marp --theme-set $(THEMES_DIR)/ --pdf --allow-local-files --output $@/$(subst .md,.pdf,$(notdir $<)) -- $<
 
 clean:
 	@rm -rf $(BUILD_DIR)/*.pdf
