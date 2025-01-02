@@ -21,6 +21,7 @@ one:
 $(BUILD_DIR)/%: $(CONTENT_DIR)/%.md
 	@mkdir -p $@
 	npx marp --theme-set $(THEMES_DIR)/ --pdf --allow-local-files --output $@/$(subst .md,.pdf,$(notdir $<)) -- $<
+	npx marp --theme-set $(THEMES_DIR)/ --images png --allow-local-files --output $@/$(subst .md,,$(notdir $<)).png -- $<
 
 clean:
 	@rm -rf $(BUILD_DIR)/*.pdf
