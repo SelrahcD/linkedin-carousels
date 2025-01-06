@@ -25,7 +25,7 @@ On teste donc les comportements via la méthode publique qui les expose, sans se
 
 ---
 
-## Exerciser la méthode privée
+## Exercer la méthode privée
 En testant un comportement, **on va exercer la méthode privée**.
 
 On peut dire qu'on "teste" une méthode privée de cette façon, mais en réalité, c'est le comportement qu’on vérifie.
