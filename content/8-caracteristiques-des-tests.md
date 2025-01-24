@@ -4,8 +4,8 @@ size: linkedin-portrait
 paginate: true
 header: 8 caractéristiques importantes des tests
 _header: ''
-_footer: <a href="https://www.linkedin.com/in/charles-desneuf/"><img src="./charles-desneuf-square.png" class="profile-picture">Charles Desneuf</a>
-footer: <a href="https://www.linkedin.com/in/charles-desneuf/">Charles Desneuf</a>
+_footer: <img src="./charles-desneuf-square.png" class="profile-picture">Charles Desneuf
+footer: Charles Desneuf
 -->
 
 # Un bon test automatisé, c'est quoi ?
@@ -95,7 +95,7 @@ Qui a envie de modifier 200 tests parce qu'un paramètre a été ajouté à un c
 
 ## Tu veux améliorer tes tests ?
 <!--
-_footer: <a href="https://www.linkedin.com/in/charles-desneuf/"><img src="./charles-desneuf-square.png" class="profile-picture">Charles Desneuf</a>
+_footer: <img src="./charles-desneuf-square.png" class="profile-picture">Charles Desneuf
 -->
 
 Si tu rencontres des problèmes de maintenance avec tes tests, s'ils ne sont pas assez lisibles, s'ils cassent pour de mauvaises raisons, je peux t'aider.
