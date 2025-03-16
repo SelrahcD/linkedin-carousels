@@ -93,6 +93,10 @@ section * {
   z-index: 2;
 }
 
+section.small p, section.small li {
+ font-size: 0.9em;
+}
+
 a {
   color: var(--title-color);
 }
