@@ -8,7 +8,7 @@ _footer: <img src="./charles-desneuf-square.png" class="profile-picture">Charles
 footer: Charles Desneuf
 -->
 
-# Créer un framework de test - part 1
+# Créer un framework de test - la base
 
 Avoir un modèle mental du fonctionnement des frameworks de test aide à écrire de meilleurs tests automatisés.
 
