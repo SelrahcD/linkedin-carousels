@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npm run marp-server",
     "marp-server": "npx marp --server --theme-set ./themes/ -- ./content"
   },
   "private": true,
